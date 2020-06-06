@@ -7,6 +7,7 @@ import SEO from "../components/seo"
 
 const IndexPage = ({ data }) => {
   console.log(data)
+  const blog = data.allMarkdownRemark.edges
   return (
     <Layout>
       <SEO title="Home" />
@@ -18,6 +19,11 @@ const IndexPage = ({ data }) => {
       </div>
       <Link to="/page-2/">Go to page 2</Link> <br />
       <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+      <main>
+        {blog.map(post => {
+          return <div>{JSON.stringify(post)}</div>
+        })}
+      </main>
     </Layout>
   )
 }
