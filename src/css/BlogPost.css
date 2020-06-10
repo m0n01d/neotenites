@@ -1,0 +1,11 @@
+.from-markdown a {
+  @apply .text-blue-500;
+}
+
+.from-markdown blockquote {
+  @apply .rounded-sm .leading-relaxed .text-lg .px-4 .py-6 .bg-gray-300 .font-serif;
+}
+
+.from-markdown blockquote cite {
+  @apply .block .mt-2;
+}
