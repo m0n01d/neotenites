@@ -4,10 +4,14 @@ import Layout from "../components/layout"
 
 export default function BlogPost({ data }) {
   const post = data.markdownRemark
+  console.log(post)
   return (
     <Layout>
       <p>{post.frontmatter.title}</p>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <div
+        class="from-markdown"
+        dangerouslySetInnerHTML={{ __html: post.html }}
+      />
     </Layout>
   )
 }
