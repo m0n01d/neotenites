@@ -4,4 +4,11 @@
 
 @import "tailwindcss/utilities";
 
+html,
+body,
+#___gatsby,
+#___gatsby > div {
+  @apply .h-full;
+}
+
 @import "./BlogPost.css";
