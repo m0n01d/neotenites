@@ -6,33 +6,50 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 
 const blogCard = ({ node }) => {
-  console.log({ node })
   const {
     frontmatter,
     fields: { slug }
   } = node
   return (
-    <div>
+    <div class="mb-3">
       <Link to={slug}>
-        <h4 class="font-medium">{frontmatter.title}</h4>
-        <p class="text-gray-700">
+        <h4 class="font-medium underline">{frontmatter.title}</h4>
+        <p class="text-sm text-gray-700">
           <small>{frontmatter.date}</small>
         </p>
-        <p>{node.excerpt}</p>
       </Link>
     </div>
   )
 }
 
+const Section = ({ title, children }) => {
+  return (
+    <div class="mb-2">
+      <h2 class="font-medium text-2xl font-mono">{title}</h2>
+      <div class="mt-2 py-2 px-4">{children}</div>
+    </div>
+  )
+}
+
 const IndexPage = ({ data }) => {
-  const blog = data.allMarkdownRemark.edges
+  const {
+    blog: { edges: blogPosts },
+    pages: { edges: pages }
+  } = data
   return (
     <Layout>
       <SEO title="Home" />
       <div>
-        {blog.map(post => {
-          return blogCard(post)
-        })}
+        <Section title="Home">
+          {pages.map(post => {
+            return blogCard(post)
+          })}
+        </Section>
+        <Section title="Blog">
+          {blogPosts.map(post => {
+            return blogCard(post)
+          })}
+        </Section>
       </div>
     </Layout>
   )
@@ -42,7 +59,23 @@ export default IndexPage
 
 export const query = graphql`
   query {
-    allMarkdownRemark {
+    pages: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/pages/i" }, frontmatter: {} }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+          }
+          fields {
+            slug
+          }
+        }
+      }
+    }
+
+    blog: allMarkdownRemark {
       totalCount
       edges {
         node {
@@ -54,7 +87,6 @@ export const query = graphql`
           fields {
             slug
           }
-          excerpt
         }
       }
     }
