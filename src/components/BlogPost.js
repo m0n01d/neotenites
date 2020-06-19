@@ -10,7 +10,7 @@ export default function BlogPost({ data }) {
         <strong>{post.frontmatter.title}</strong>
       </h1>
       <div
-        class="from-markdown mt-4"
+        class="blog-post from-markdown w-full md:w-7/12 mt-4 leading-relaxed"
         dangerouslySetInnerHTML={{ __html: post.html }}
       />
     </Layout>

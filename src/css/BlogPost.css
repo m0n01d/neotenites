@@ -9,3 +9,11 @@
 .from-markdown blockquote cite {
   @apply .block .mt-2;
 }
+
+.from-markdown ul {
+  @apply .bg-gray-200 .px-3 .py-2;
+}
+
+.from-markdown.blog-post p {
+  @apply .mb-2;
+}
