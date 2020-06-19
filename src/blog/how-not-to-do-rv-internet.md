@@ -14,7 +14,7 @@ In preparing to go full-time I looked at how other RVers did their internet setu
 
 </br >
 
-#### *TLDR*:
+*TLDR*:
 * We use Visible (Verizon network).
 * Bought a Verizon Jetpack 7730l which didn’t work.
 * Switched to a netgear aircard attached to a wifiranger router for internet. Works ok.
