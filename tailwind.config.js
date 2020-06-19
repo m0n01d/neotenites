@@ -1,8 +1,14 @@
 module.exports = {
   purge: [],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        mono: "Hack, monospace"
+      }
+    }
   },
-  variants: {},
-  plugins: [],
+  variants: {
+    textColor: ["group-hover"]
+  },
+  plugins: []
 }
