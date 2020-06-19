@@ -12,9 +12,14 @@ const blogCard = ({ node }) => {
   } = node
   return (
     <div class="mb-3">
-      <Link to={slug}>
-        <h4 class="font-medium underline">{frontmatter.title}</h4>
-        <p class="text-sm text-gray-700">
+      <Link
+        to={slug}
+        className="font-mono p-px hover:bg-black  inline-block group"
+      >
+        <h4 class="font-medium underline group-hover:text-white text-lg">
+          {frontmatter.title}
+        </h4>
+        <p class="text-sm text-gray-700 group-hover:text-gray-100">
           <small>{frontmatter.date}</small>
         </p>
       </Link>
@@ -25,7 +30,7 @@ const blogCard = ({ node }) => {
 const Section = ({ title, children }) => {
   return (
     <div class="mb-2">
-      <h2 class="font-medium text-2xl font-mono">{title}</h2>
+      <h2 class="font-extrabold text-3xl ">{title}</h2>
       <div class="mt-2 py-2 px-4">{children}</div>
     </div>
   )
@@ -75,7 +80,9 @@ export const query = graphql`
       }
     }
 
-    blog: allMarkdownRemark {
+    blog: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/blog/i" } }
+    ) {
       totalCount
       edges {
         node {
