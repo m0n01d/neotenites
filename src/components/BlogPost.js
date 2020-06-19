@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 
 export default function BlogPost({ data }) {
   const post = data.markdownRemark
-  console.log(post)
   return (
     <Layout>
       <p>{post.frontmatter.title}</p>

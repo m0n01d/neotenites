@@ -24,17 +24,17 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <div class="flex flex-col h-full">
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div class="container mx-auto">
-        <main>{children}</main>
+      <div class="container mx-auto flex-1 flex flex-col">
+        <main class="flex-1">{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
-    </>
+    </div>
   )
 }
 
