@@ -6,7 +6,9 @@ export default function BlogPost({ data }) {
   const post = data.markdownRemark
   return (
     <Layout>
-      <h1 className="font-extrabold text-2xl">{post.frontmatter.title}</h1>
+      <h1 className="font-extrabold font-mono text-2xl">
+        <strong>{post.frontmatter.title}</strong>
+      </h1>
       <div
         class="from-markdown mt-4"
         dangerouslySetInnerHTML={{ __html: post.html }}

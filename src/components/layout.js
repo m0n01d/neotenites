@@ -28,10 +28,8 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <div class="container mx-auto flex-1 flex flex-col">
         <main class="flex-1">{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <footer class="font-mono py-3 text-sm sm:text-base">
+          © {new Date().getFullYear()}, Built with our bear hands 🐻
         </footer>
       </div>
     </div>
