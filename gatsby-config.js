@@ -5,7 +5,21 @@ module.exports = {
     author: `@neotenites`
   },
   plugins: [
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: { trackingId: `UA-97080570-6` }
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {}
+          }
+        ]
+      }
+    },
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     {
