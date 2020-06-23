@@ -5,6 +5,10 @@ module.exports = {
     author: `@neotenites`
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: { trackingId: `UA-97080570-6` }
+    },
     `gatsby-transformer-remark`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
