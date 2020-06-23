@@ -9,7 +9,17 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: { trackingId: `UA-97080570-6` }
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {}
+          }
+        ]
+      }
+    },
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
     {
