@@ -42,6 +42,11 @@ Since we have the 3 season doors I was able to pop out the screen on the bottom 
 Toby likes to dive-bomb from the bunk bed onto the the mat.
 
 The mat sits up high enough that we can still sit or lay out there and enjoy the sunshine, fresh air, and birds.
+
+</br>
+
+Enjoy these pictures of Toby:
+
  ![toby](../images/catio/toby1.jpeg)
  ![toby](../images/catio/toby2.jpeg)
 ![toby](../images/catio/toby3.jpeg)
