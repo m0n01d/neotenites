@@ -82,6 +82,7 @@ export const query = graphql`
 
     blog: allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/blog/i" } }
+      sort: { fields: [frontmatter___date], order: DESC }
     ) {
       totalCount
       edges {
