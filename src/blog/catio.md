@@ -39,7 +39,7 @@ We bought 6 pool noodles from Publix for $2 each. We went with the thinner diame
 Since we have the 3 season doors I was able to pop out the screen on the bottom of one of the doors and roll it up to function as a cat door. That way (some of) the AC stays in the RV and the cats can go in and out. 
 ![from inside](../images/catio/inside.jpeg)
 
-Toby likes to dive-bomb from the bunk bed onto the the mat.
+Toby likes to dive-bomb from the bunk bed onto the mat.
 
 The mat sits up high enough that we can still sit or lay out there and enjoy the sunshine, fresh air, and birds.
 
