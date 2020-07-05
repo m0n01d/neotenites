@@ -47,57 +47,58 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <div>
-        <Section title="Home">
-          {pages.map(post => {
-            return blogCard(post)
-          })}
-        </Section>
-        <Section title="Blog">
-          {blogPosts.map(post => {
-            return blogCard(post)
-          })}
-        </Section>
-        <MyMap />
+      <div class="sm:flex h-full">
+        <div class="w-1/2">
+          <Section title="Pages">
+            {pages.map(post => {
+              return blogCard(post)
+            })}
+          </Section>
+          <Section title="Blog">
+            {blogPosts.map(post => {
+              return blogCard(post)
+            })}
+          </Section>
+        </div>
+        <div class="hidden sm:block w-1/2">
+          <MyMap />
+        </div>
       </div>
     </Layout>
   )
 }
 
 const MyMap = () => {
-  const [a, b] = [28.7948813, -81.425958]
-  const [x, y] = [28.568864, -81.3566964]
-  const features = [
-    {
-      geometry,
-      type: "Feature",
-      properties: {
-        name: "dwit",
-        show_on_map: true
-      }
-    }
-  ]
-  const coordinates = [
-    [y, x],
-    [b, a]
-  ]
+  const wekivaFalls = { name: "Wekiva Falls", loc: [28.7948813, -81.425958] } // wekiva falls
+  const oldHouse = { name: "Our old house", loc: [28.568864, -81.3566964] } // merritt park
+  const coordinates = [oldHouse, wekivaFalls].map(({ loc }) => loc.reverse())
+  // todo move this data to api to query with graphql
 
   const geometryForLines = [
     {
       type: "LineString",
-      coordinates
+      coordinates: coordinates.reverse()
     }
   ]
   // Todo: add markers for each cooridinate
   // Add date to coordinates so they can be use in marker
   //
-  console.log({ features })
+  //
+  //
+  //
+  const [[centerLon, centerLat]] = coordinates
+  const url =
+    "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
+
+  console.log({ url })
+  const zoom = 7
   return (
-    <Map center={[a, b]} zoom={13} style={{ width: "100%", height: "100vh" }}>
-      <TileLayer
-        attribute="todo"
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
+    <Map
+      center={[centerLat, centerLon]}
+      zoom={zoom}
+      style={{ width: "100%", height: "100%" }}
+    >
+      <TileLayer attribution="todo" url={url} />
       <GeoJSON
         style={i => ({
           weight: 0.3,
@@ -110,7 +111,7 @@ const MyMap = () => {
           weight: 5,
           opacity: 0.65
         })}
-        data={geometry}
+        data={geometryForLines}
         key={`test`}
       />
     </Map>
