@@ -9,10 +9,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId:
-          process.env.VERCEL_URL && process.env.VERCEL_URL == "neotenites.com"
-            ? `UA-97080570-6`
-            : `${process.env.VERCEL_URL}`
+        trackingId: process.env.VERCEL_URL
+          ? `UA-97080570-6`
+          : `${process.env.VERCEL_URL}`
       }
     },
     {
