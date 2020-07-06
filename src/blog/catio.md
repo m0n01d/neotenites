@@ -18,7 +18,7 @@ Our Momentum’s patio deck makes for a perfect _“catio.”_
 *TLDR* 
 * Buy a toy hauler with patio ramp door
 * Buy large enough soundproof mat from REI to cover patio
-* Use bungies to secure mat to rails
+* Use bungees to secure mat to rails
 * Fill gaps between floor and rails with pool noodles to keep cats inside
 * Cut hole in screen door for cats to get in and out
 * ???
@@ -29,7 +29,7 @@ Our Momentum’s patio deck makes for a perfect _“catio.”_
 A couple years ago I bought a [6x6 sandproof mat from REI ](https://www.rei.com/product/130163/cgear-multimats-original-sand-free-mat) which we used to lay on the floor of the patio for us humans to enjoy since the ramp is a rougher texture. I remembered that REI sold larger versions of the mat, (6ft, 8ft, and 10ft)  which I realized could fit over top the railing and completely cover the patio. The patio rails are just under 8ft across. 
 
 
-So I ordered a [larger mat]( https://www.rei.com/product/130163/cgear-multimats-original-sand-free-mat) which measures 8x8. I then went to Ace hardware and picked up 24” bungie cords to secure the mat to the rail. The mat already has rings sewed in which makes securing it easy.
+So I ordered a [larger mat]( https://www.rei.com/product/130163/cgear-multimats-original-sand-free-mat) which measures 8x8. I then went to Ace hardware and picked up 24” bungee cords to secure the mat to the rail. The mat already has rings sewed in which makes securing it easy.
 The gap between the floor of the deck and the bottom of the rails is big enough even for a fat cat to squeeze his chunky butt through and sneak out, so we bought pool noodles and cut along its length to fit around the bottom rail and fill in the gap.
 
  ![setup](../images/catio/setup.jpeg)
