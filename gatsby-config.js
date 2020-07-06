@@ -5,6 +5,7 @@ module.exports = {
     author: `@neotenites`
   },
   plugins: [
+    { resolve: `gatsby-plugin-react-leaflet`, options: { linkStyles: false } },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
