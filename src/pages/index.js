@@ -71,7 +71,7 @@ const IndexPage = ({ data }) => {
 
 const MyMap = () => {
   const wekivaFalls = { name: "Wekiva Falls", loc: [28.7948813, -81.425958] } // wekiva falls
-  const oldHouse = { name: "Our old house", loc: [28.568864, -81.3566964] } // merritt park
+  const oldHouse = { name: "Our old house", loc: [28.5688617, -81.3587769] } // merritt park
   const coordinates = [oldHouse, wekivaFalls]
   // todo move this data to api to query with graphql
 
