@@ -4,6 +4,7 @@ import "./app.css"
 import { GeoJSON, Map, TileLayer, Marker, Popup } from "react-leaflet"
 import L from "leaflet"
 
+import * as iconUrl from "leaflet/dist/images/marker-icon-2x.png"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
@@ -14,15 +15,15 @@ const blogCard = ({ node }) => {
     fields: { slug }
   } = node
   return (
-    <div class="mb-3">
+    <div className="mb-3">
       <Link
         to={slug}
         className="font-mono p-px hover:bg-black  inline-block group"
       >
-        <h4 class="font-medium underline group-hover:text-white text-lg">
+        <h4 className="font-medium underline group-hover:text-white text-lg">
           {frontmatter.title}
         </h4>
-        <p class="text-sm text-gray-700 group-hover:text-gray-100">
+        <p className="text-sm text-gray-700 group-hover:text-gray-100">
           <small>{frontmatter.date}</small>
         </p>
       </Link>
@@ -32,9 +33,9 @@ const blogCard = ({ node }) => {
 
 const Section = ({ title, children }) => {
   return (
-    <div class="mb-2">
-      <h2 class="font-extrabold text-3xl ">{title}</h2>
-      <div class="mt-2 py-2 px-4">{children}</div>
+    <div className="mb-2">
+      <h2 className="font-extrabold text-3xl ">{title}</h2>
+      <div className="mt-2 py-2 px-4">{children}</div>
     </div>
   )
 }
@@ -71,13 +72,13 @@ const IndexPage = ({ data }) => {
 const MyMap = () => {
   const wekivaFalls = { name: "Wekiva Falls", loc: [28.7948813, -81.425958] } // wekiva falls
   const oldHouse = { name: "Our old house", loc: [28.568864, -81.3566964] } // merritt park
-  const coordinates = [oldHouse, wekivaFalls].map(({ loc }) => loc.reverse())
+  const coordinates = [oldHouse, wekivaFalls]
   // todo move this data to api to query with graphql
 
   const geometryForLines = [
     {
       type: "LineString",
-      coordinates: coordinates.reverse()
+      coordinates: coordinates.map(({ loc }) => loc.reverse()).reverse()
     }
   ]
   // Todo: add markers for each cooridinate
@@ -86,11 +87,10 @@ const MyMap = () => {
   //
   //
   //
-  const [[centerLon, centerLat]] = coordinates
+  const [[centerLon, centerLat]] = geometryForLines[0].coordinates
   const url =
     "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
 
-  console.log({ url })
   const zoom = 7
   return (
     <Map
@@ -114,6 +114,25 @@ const MyMap = () => {
         data={geometryForLines}
         key={`test`}
       />
+      {coordinates.map((place, i) => {
+        return (
+          <Marker
+            icon={L.divIcon({
+              html: `<p>${i}</p>`,
+              className:
+                "bg-white rounded-sm font-mono border border-gray-100 text-center w-6 h-6",
+              iconSize: [18, 18]
+            })}
+            position={place.loc.slice().reverse()}
+            key={place.name}
+          >
+            <span>Marker {place.name}</span>
+            <Popup>
+              <span className="font-mono">{place.name}</span>
+            </Popup>
+          </Marker>
+        )
+      })}
     </Map>
   )
 }
