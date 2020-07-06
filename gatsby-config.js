@@ -7,7 +7,12 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-plugin-google-analytics`,
-      options: { trackingId: `UA-97080570-6` }
+      options: {
+        trackingId:
+          process.env.VERCEL_GITHUB_COMMIT_REPO == "master"
+            ? `UA-97080570-6`
+            : ""
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
