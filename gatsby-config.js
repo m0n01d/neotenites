@@ -12,7 +12,7 @@ module.exports = {
         trackingId:
           process.env.VERCEL_URL && process.env.VERCEL_URL == "neotenites.com"
             ? `UA-97080570-6`
-            : `-please-${process.env.VERCEL_GITHUB_COMMIT_REF}-${process.env.VERCEL_URL}`
+            : `${process.env.VERCEL_URL}`
       }
     },
     {
