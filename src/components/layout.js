@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
       <div class="container mx-auto flex-1 flex flex-col">
         <main class="flex-1">{children}</main>
         <footer class="font-mono py-3 text-sm sm:text-base">
-          © {new Date().getFullYear()}, Built with our bear hands 🐻
+          © {new Date().getFullYear()}, our bear hands
         </footer>
       </div>
     </div>

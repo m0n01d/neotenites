@@ -5,9 +5,16 @@ module.exports = {
     author: `@neotenites`
   },
   plugins: [
+    { resolve: `gatsby-plugin-react-leaflet`, options: { linkStyles: false } },
     {
       resolve: `gatsby-plugin-google-analytics`,
-      options: { trackingId: `UA-97080570-6` }
+      options: {
+        trackingId:
+          process.env.VERCEL_GITHUB_COMMIT_REPO &&
+          process.env.VERCEL_GITHUB_COMMIT_REPO == "master"
+            ? `UA-97080570-6`
+            : ""
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
