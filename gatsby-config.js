@@ -10,8 +10,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId:
-          process.env.VERCEL_GITHUB_COMMIT_REPO &&
-          process.env.VERCEL_GITHUB_COMMIT_REPO == "master"
+          process.env.VERCEL_URL && process.env.VERCEL_URL == "neotenites.com"
             ? `UA-97080570-6`
             : ""
       }
