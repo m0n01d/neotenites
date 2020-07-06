@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 import "./app.css"
 import { GeoJSON, Map, TileLayer, Marker, Popup } from "react-leaflet"
-import L from "leaflet"
 
 import * as iconUrl from "leaflet/dist/images/marker-icon-2x.png"
 import Layout from "../components/layout"
@@ -62,20 +61,28 @@ const IndexPage = ({ data }) => {
           </Section>
         </div>
         <div class="sm:w-1/2 h-full">
-          {typeof window != "undefined" ? (
-            <MyMap />
-          ) : (
-            <span>no map for you</span>
-          )}
+          <MapWrap />
         </div>
       </div>
     </Layout>
   )
 }
+const MapWrap = () => {
+  if (typeof window != "undefined") {
+    return <MyMap />
+  }
+  return <span className="font-mono">There should be a map here...</span>
+}
 
 const MyMap = () => {
-  const wekivaFalls = { name: "Wekiva Falls", loc: [28.7948813, -81.425958] } // wekiva falls
-  const oldHouse = { name: "Our old house", loc: [28.5688617, -81.3587769] } // merritt park
+  const wekivaFalls = {
+    name: "Wekiva Falls",
+    loc: [28.7948813, -81.425958]
+  } // wekiva falls
+  const oldHouse = {
+    name: "Our old house",
+    loc: [28.5688617, -81.3587769]
+  } // merritt park
   const coordinates = [oldHouse, wekivaFalls]
   // todo move this data to api to query with graphql
 
