@@ -7,6 +7,8 @@ import * as iconUrl from "leaflet/dist/images/marker-icon-2x.png"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+// todo checkout https://www.freecodecamp.org/news/how-to-create-a-summer-road-trip-mapping-app-with-gatsby-and-leaflet/
+//
 
 const blogCard = ({ node }) => {
   const {
