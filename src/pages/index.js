@@ -111,7 +111,7 @@ const MyMap = () => {
       zoom={zoom}
       style={{ width: "100%", height: "100%" }}
     >
-      <TileLayer attribution="todo" url={url} />
+      <TileLayer attribution="" url={url} />
       <GeoJSON
         style={i => ({
           weight: 0.3,
