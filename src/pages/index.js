@@ -62,7 +62,11 @@ const IndexPage = ({ data }) => {
           </Section>
         </div>
         <div class="sm:w-1/2 h-full">
-          <MyMap />
+          {typeof window != "undefined" ? (
+            <MyMap />
+          ) : (
+            <span>no map for you</span>
+          )}
         </div>
       </div>
     </Layout>
