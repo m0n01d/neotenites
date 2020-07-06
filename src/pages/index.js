@@ -49,7 +49,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Home" />
       <div class="sm:flex h-full">
-        <div class="w-1/2">
+        <div class="sm:w-1/2">
           <Section title="Pages">
             {pages.map(post => {
               return blogCard(post)
@@ -61,7 +61,7 @@ const IndexPage = ({ data }) => {
             })}
           </Section>
         </div>
-        <div class="hidden sm:block w-1/2">
+        <div class="sm:w-1/2 h-full">
           <MyMap />
         </div>
       </div>
