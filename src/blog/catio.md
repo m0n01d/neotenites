@@ -36,7 +36,7 @@ The gap between the floor of the deck and the bottom of the rails is big enough 
  ![detail](../images/catio/detail.jpeg)
 We bought 6 pool noodles from Publix for $2 each. We went with the thinner diameter noodles. There's still a gap but I don't think it's big enough for fit through. With the thinner noodles they don't have to come off before closing the patio up.  
 
-Since we have the 3 season doors I was able to pop out the screen on the bottom of one of the doors and roll it up to function as a cat door. That way (some of) the AC stays in the RV and the cats can go in and out. 
+Since we have the 3 season doors I was able to pop out the screen on the bottom of one of the doors and roll it up to function as a cat door. That way (some of) the AC stays in the RV and the cats can still go in and out. 
 ![from inside](../images/catio/inside.jpeg)
 
 Toby likes to dive-bomb from the bunk bed onto the mat.
