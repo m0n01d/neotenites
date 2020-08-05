@@ -1,9 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
-import "./app.css"
+
 import { GeoJSON, Map, TileLayer, Marker, Popup } from "react-leaflet"
+import * as L from "leaflet"
 
 import * as iconUrl from "leaflet/dist/images/marker-icon-2x.png"
+import { format } from "date-fns"
+import "./app.css"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
@@ -79,13 +82,33 @@ const MapWrap = () => {
 const MyMap = () => {
   const wekivaFalls = {
     name: "Wekiva Falls",
-    loc: [28.7948813, -81.425958]
+    loc: [28.7948813, -81.425958],
+    dates: [new Date("2020-05-15"), new Date("2020-07-31")]
   } // wekiva falls
   const oldHouse = {
     name: "Our old house",
-    loc: [28.5688617, -81.3587769]
+    loc: [28.5688617, -81.3587769],
+
+    dates: [new Date("2020-05-15"), new Date("2020-07-31")]
   } // merritt park
-  const coordinates = [oldHouse, wekivaFalls]
+  const suwanneMusicPark = {
+    name: "Suwannee Music Park",
+    loc: [30.394196, -82.944311],
+
+    dates: [new Date("2020-05-15"), new Date("2020-07-31")]
+  }
+  const highFallsStatePark = {
+    name: "High Falls State Park",
+    loc: [33.1822347, -84.0149594],
+
+    dates: [new Date("2020-05-15"), new Date("2020-07-31")]
+  }
+  const coordinates = [
+    oldHouse,
+    wekivaFalls,
+    suwanneMusicPark,
+    highFallsStatePark
+  ]
   // todo move this data to api to query with graphql
 
   const geometryForLines = [
@@ -119,15 +142,17 @@ const MyMap = () => {
           opacity: 1,
           dashArray: "3",
           fillOpacity: 0.5,
-          fillColor: "red",
-          color: "#f00",
+          fillColor: "indianred",
+          color: "indianred",
           weight: 5,
-          opacity: 0.65
+          opacity: 0.45
         })}
         data={geometryForLines}
         key={`test`}
       />
       {coordinates.map((place, i) => {
+        let [startDate, endDate] = place.dates.map(d => format(d, "MM-dd-yy"))
+        // todo dates
         return (
           <Marker
             icon={L.divIcon({
@@ -139,9 +164,9 @@ const MyMap = () => {
             position={place.loc.slice().reverse()}
             key={place.name}
           >
-            <span>Marker {place.name}</span>
             <Popup>
-              <span className="font-mono">{place.name}</span>
+              <p className="font-mono">{place.name}</p>
+              <p></p>
             </Popup>
           </Marker>
         )
