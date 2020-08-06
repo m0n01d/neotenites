@@ -103,11 +103,23 @@ const MyMap = () => {
 
     dates: [new Date("2020-05-15"), new Date("2020-07-31")]
   }
+  const bassPro = {
+    name: "Bass Pro parking lot",
+    loc: [34.9929872, -85.202979],
+    dates: [new Date("2020-08-05"), new Date("2020-08-06")]
+  }
+  const knoxivlleKoa = {
+    name: "Clinton / Knoxville North KOA Journey",
+    loc: [36.1699759, -84.0796367],
+    dates: [new Date("2020-08-6"), new Date("2020-08-09")]
+  }
   const coordinates = [
     oldHouse,
     wekivaFalls,
     suwanneMusicPark,
-    highFallsStatePark
+    highFallsStatePark,
+    bassPro,
+    knoxivlleKoa
   ]
   // todo move this data to api to query with graphql
 
@@ -151,8 +163,7 @@ const MyMap = () => {
         key={`test`}
       />
       {coordinates.map((place, i) => {
-        let [startDate, endDate] = place.dates.map(d => format(d, "MM-dd-yy"))
-        // todo dates
+        let [startDate, endDate] = place.dates
         return (
           <Marker
             icon={L.divIcon({
