@@ -29,7 +29,19 @@ const Layout = ({ children }) => {
       <div class="container mx-auto flex-1 flex flex-col">
         <main class="flex-1">{children}</main>
         <footer class="font-mono py-3 text-sm sm:text-base">
-          © {new Date().getFullYear()} neotenites
+          <div class="flex">
+            <p>
+              © {new Date().getFullYear()}
+              <a
+                class="mx-2 text-blue-700"
+                href="https://instagram.com/neotenites"
+                target="_blank"
+                rel="noopener"
+              >
+                @neotenites
+              </a>
+            </p>
+          </div>
         </footer>
       </div>
     </div>
