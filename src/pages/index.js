@@ -89,19 +89,19 @@ const MyMap = () => {
     name: "Our old house",
     loc: [28.5688617, -81.3587769],
 
-    dates: [new Date("2020-05-15"), new Date("2020-07-31")]
+    dates: [new Date("2020-04-04"), new Date("2020-05-15")]
   } // merritt park
   const suwanneMusicPark = {
     name: "Suwannee Music Park",
     loc: [30.394196, -82.944311],
 
-    dates: [new Date("2020-05-15"), new Date("2020-07-31")]
+    dates: [new Date("2020-07-31"), new Date("2020-08-02")]
   }
   const highFallsStatePark = {
     name: "High Falls State Park",
     loc: [33.1822347, -84.0149594],
 
-    dates: [new Date("2020-05-15"), new Date("2020-07-31")]
+    dates: [new Date("2020-08-02"), new Date("2020-08-05")]
   }
   const bassPro = {
     name: "Bass Pro parking lot",
@@ -116,22 +116,22 @@ const MyMap = () => {
   const kyHorsePark = {
     name: "Kentucky Horse Park",
     loc: [38.1500968, -84.520572],
-    dates: []
+    dates: [new Date("2020-08-09"), new Date("2020-08-10")]
   }
   const wertzTreeFarm = {
     name: "Wertz Tree Farm",
     loc: [39.5264989, -84.30862],
-    dates: []
+    dates: [new Date("2020-08-10"), new Date("2020-11")]
   }
   const arrowHeadLakesResort = {
     name: "Arrowhead Lakes Resort",
     loc: [40.5597829, -84.1619031],
-    dates: []
+    dates: [new Date("2020-08-11"), new Date("2020-08-16")]
   }
   const dadsHouse = {
     name: `My Dad's house`,
     loc: [40.6309833, -82.5616259],
-    dates: [new Date("2020-08-17"), new Date("2020-08-22")]
+    dates: [new Date("2020-08-16")]
   }
   const coordinates = [
     oldHouse,
@@ -187,7 +187,11 @@ const MyMap = () => {
         key={`test`}
       />
       {coordinates.map((place, i) => {
-        let [startDate, endDate] = place.dates
+        let [startDate, endDate = new Date()] = place.dates
+        let [startDate_, endDate_] = [startDate, endDate].map(d =>
+          format(d, "dd MMM, yyyy")
+        )
+
         return (
           <Marker
             icon={L.divIcon({
@@ -201,7 +205,13 @@ const MyMap = () => {
           >
             <Popup>
               <p className="font-mono">{place.name}</p>
-              <p></p>
+              <div>
+                <p className="font-mono">
+                  <span>{startDate_}</span>
+                  <span className="mx-1">-</span>
+                  <span>{endDate_}</span>
+                </p>
+              </div>
             </Popup>
           </Marker>
         )
