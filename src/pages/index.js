@@ -5,7 +5,7 @@ import { GeoJSON, Map, TileLayer, Marker, Popup } from "react-leaflet"
 import * as L from "leaflet"
 
 import * as iconUrl from "leaflet/dist/images/marker-icon-2x.png"
-import { format } from "date-fns"
+import { addDays, parseIso, format } from "date-fns"
 import "./app.css"
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -121,7 +121,7 @@ const MyMap = () => {
   const wertzTreeFarm = {
     name: "Wertz Tree Farm",
     loc: [39.5264989, -84.30862],
-    dates: [new Date("2020-08-10"), new Date("2020-11")]
+    dates: [new Date("2020-08-10"), new Date("2020-08-11")]
   }
   const arrowHeadLakesResort = {
     name: "Arrowhead Lakes Resort",
@@ -187,11 +187,9 @@ const MyMap = () => {
         key={`test`}
       />
       {coordinates.map((place, i) => {
-        let [startDate, endDate = new Date()] = place.dates
-        let [startDate_, endDate_] = [startDate, endDate].map(d =>
-          format(d, "dd MMM, yyyy")
-        )
-
+        let [startDate, endDate = "present"] = place.dates
+          .map(d => addDays(d, 1))
+          .map(d => format(d, "dd MMM, yyyy"))
         return (
           <Marker
             icon={L.divIcon({
@@ -204,12 +202,12 @@ const MyMap = () => {
             key={place.name}
           >
             <Popup>
-              <p className="font-mono">{place.name}</p>
+              <p className="font-mono text-base ">{place.name}</p>
               <div>
-                <p className="font-mono">
-                  <span>{startDate_}</span>
+                <p className="text-xs text-gray-700 font-mono">
+                  <span>{startDate}</span>
                   <span className="mx-1">-</span>
-                  <span>{endDate_}</span>
+                  <span>{endDate}</span>
                 </p>
               </div>
             </Popup>
