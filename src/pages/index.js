@@ -128,6 +128,11 @@ const MyMap = () => {
     loc: [40.5597829, -84.1619031],
     dates: []
   }
+  const dadsHouse = {
+    name: `My Dad's house`,
+    loc: [40.6309833, -82.5616259],
+    dates: [new Date("2020-08-17"), new Date("2020-08-22")]
+  }
   const coordinates = [
     oldHouse,
     wekivaFalls,
@@ -137,7 +142,8 @@ const MyMap = () => {
     knoxivlleKoa,
     kyHorsePark,
     wertzTreeFarm,
-    arrowHeadLakesResort
+    arrowHeadLakesResort,
+    dadsHouse
   ]
   // todo move this data to api to query with graphql
 
