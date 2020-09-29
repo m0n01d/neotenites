@@ -4,11 +4,10 @@ import { Link } from "gatsby"
 import { GeoJSON, Map, TileLayer, Marker, Popup } from "react-leaflet"
 import * as L from "leaflet"
 
-import * as iconUrl from "leaflet/dist/images/marker-icon-2x.png"
-import { addDays, parseIso, format } from "date-fns"
+//import * as iconUrl from "leaflet/dist/images/marker-icon-2x.png"
+import { addDays, format } from "date-fns"
 import "./app.css"
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 // todo checkout https://www.freecodecamp.org/news/how-to-create-a-summer-road-trip-mapping-app-with-gatsby-and-leaflet/
 //
@@ -131,7 +130,17 @@ const MyMap = () => {
   const dadsHouse = {
     name: `My Dad's house`,
     loc: [40.6309833, -82.5616259],
-    dates: [new Date("2020-08-16")]
+    dates: [new Date("2020-08-16"), new Date("2020-09-24")]
+  }
+  const rockyForkRanch = {
+    name: `Rocky Fork Ranch Resort`,
+    loc: [40.191477, -81.486492],
+    dates: [new Date("2020-09-24"), new Date("2020-09-28")]
+  }
+  const dadsHouseAgain = {
+    name: `My Dad's house`,
+    loc: [40.6309833, -82.5626259],
+    dates: [new Date("2020-09-28")]
   }
   const coordinates = [
     oldHouse,
@@ -143,7 +152,9 @@ const MyMap = () => {
     kyHorsePark,
     wertzTreeFarm,
     arrowHeadLakesResort,
-    dadsHouse
+    dadsHouse,
+    rockyForkRanch,
+    dadsHouseAgain
   ]
   // todo move this data to api to query with graphql
 
@@ -163,6 +174,7 @@ const MyMap = () => {
   const url =
     "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png"
 
+  const rounded = "rounded-tl-sm rounded-br-sm"
   const zoom = 7
   return (
     <Map
@@ -173,15 +185,9 @@ const MyMap = () => {
       <TileLayer attribution="" url={url} />
       <GeoJSON
         style={i => ({
-          weight: 0.3,
-          //stroke-width: to have a constant width on the screen need to adapt with scale
-          opacity: 1,
-          dashArray: "3",
-          fillOpacity: 0.5,
-          fillColor: "indianred",
           color: "indianred",
-          weight: 5,
-          opacity: 0.45
+          weight: 4,
+          opacity: 0.25
         })}
         data={geometryForLines}
         key={`test`}
@@ -194,8 +200,7 @@ const MyMap = () => {
           <Marker
             icon={L.divIcon({
               html: `<p>${i}</p>`,
-              className:
-                "bg-white rounded-sm font-mono border border-gray-100 text-center w-6 h-6",
+              className: `${rounded} bg-white  font-mono border border-gray-100 text-center w-6 h-6`,
               iconSize: [18, 18]
             })}
             position={place.loc.slice().reverse()}
