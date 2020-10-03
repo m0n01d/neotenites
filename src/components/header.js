@@ -7,7 +7,11 @@ const Header = ({ siteTitle }) => (
     <div>
       <h1 class="font-mono font-light">
         <Link to="/">
-          <img alt={siteTitle} src={require("../images/neotenites.svg")} />
+          <img
+            className="block w-40 md:w-auto"
+            alt={siteTitle}
+            src={require("../images/neotenites.svg")}
+          />
         </Link>
       </h1>
     </div>
