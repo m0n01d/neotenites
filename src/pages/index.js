@@ -195,7 +195,7 @@ const MyMap = () => {
       {coordinates.map((place, i) => {
         let [startDate, endDate = "present"] = place.dates
           .map(d => addDays(d, 1))
-          .map(d => format(d, "dd MMM, yyyy"))
+          .map(d => format(d, "DD MMM YYYY"))
         return (
           <Marker
             icon={L.divIcon({
