@@ -1,0 +1,8 @@
+{
+  "redirects": [
+    {
+      "source": "/yt",
+      "destination": "https://www.youtube.com/channel/UCFrYlpO11m2OK-kVmi34dBg"
+    }
+  ]
+}
