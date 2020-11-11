@@ -213,6 +213,7 @@ const MyMap = () => {
     suwanneeMusicPark2
   ]
   // todo move this data to api to query with graphql
+  // consider keying by date
 
   const geometryForLines = [
     {

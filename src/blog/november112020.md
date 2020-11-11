@@ -1,0 +1,8 @@
+# week of November 13
+We had an amazing canoe <b>trip<b> with our friend Sabrina.
+Afterwards we have a nice campfire, beers and dinner.
+The next morning Sabrina heads to North Carolina.
+All our friends have left now. 
+We went to one of the ‘secret’ beaches I found the other day. While we were exploring the beaches, another couple showed up at our spot and decided to go skinny dipping. After an awkward conversation they left. 
+We’ve been keeping an eye on TS Eta. It keeps dancing back and forth in the Gulf.
+
