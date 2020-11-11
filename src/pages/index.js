@@ -5,13 +5,33 @@ import { GeoJSON, Map, TileLayer, Marker, Popup } from "react-leaflet"
 import * as L from "leaflet"
 
 //import * as iconUrl from "leaflet/dist/images/marker-icon-2x.png"
-import { addDays, format } from "date-fns"
+import { addDays } from "date-fns"
 import "./app.css"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 // todo checkout https://www.freecodecamp.org/news/how-to-create-a-summer-road-trip-mapping-app-with-gatsby-and-leaflet/
 //
-
+// const loc = location.href.split('@').slice(1)[0].split(',').slice(0, 2); copy(loc)
+const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December"
+]
+const format = date => {
+  const day = date.getDate()
+  const month = months[date.getMonth()]
+  const year = date.getFullYear()
+  return `${day.toString().padStart(2, "0")} ${month}, ${year}`
+}
 const blogCard = ({ node }) => {
   const {
     frontmatter,
@@ -77,7 +97,7 @@ const MapWrap = () => {
   }
   return <span className="font-mono">There should be a map here...</span>
 }
-
+const toDate = d => new Date(d)
 const MyMap = () => {
   const wekivaFalls = {
     name: "Wekiva Falls",
@@ -140,7 +160,37 @@ const MyMap = () => {
   const dadsHouseAgain = {
     name: `My Dad's house`,
     loc: [40.6309833, -82.5626259],
-    dates: [new Date("2020-09-28")]
+    dates: [new Date("2020-09-28"), new Date("2020-10-23")]
+  }
+  const appalachianDistillery = {
+    name: `Appalachian Distillery - Harvest Host`,
+    loc: [38.7637012, -81.6842639],
+    dates: [new Date("2020-10-23"), new Date("2020-10-24")]
+  }
+  const wytheRaceway = {
+    name: `Wythe Raceway - Harvest Host`,
+    loc: ["36.9237408", "-81.2442123"],
+    dates: [new Date("2020-10-24"), new Date("2020-10-25")]
+  }
+  const yogiBearNC = {
+    name: `Yogi Bear’s Jelly Stone Park NC`,
+    loc: ["35.5007965", "-81.7951701"],
+    dates: [new Date("2020-10-25"), new Date("2020-10-28")]
+  }
+  const cartersVille = {
+    name: `Cartersville Country Winery SC`,
+    loc: ["34.1008897", "-80.0320986"],
+    dates: ["2020-10-28", "2020-10-29"].map(toDate)
+  }
+  const savannahKoa = {
+    name: `Savannah KOA`,
+    loc: ["31.9206695", "-81.3415854"],
+    dates: ["2020-10-29", "2020-10-30"].map(toDate)
+  }
+  const suwanneeMusicPark2 = {
+    name: `Suwannee Music Park`,
+    loc: [30.394196, -82.944311],
+    dates: ["2020-10-30"].map(toDate)
   }
   const coordinates = [
     oldHouse,
@@ -154,7 +204,13 @@ const MyMap = () => {
     arrowHeadLakesResort,
     dadsHouse,
     rockyForkRanch,
-    dadsHouseAgain
+    dadsHouseAgain,
+    appalachianDistillery,
+    wytheRaceway,
+    yogiBearNC,
+    cartersVille,
+    savannahKoa,
+    suwanneeMusicPark2
   ]
   // todo move this data to api to query with graphql
 
