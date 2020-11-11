@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
           <p class="flex">
             <span class="mr-auto">© {new Date().getFullYear()}</span>
             <a
-              class="mx-2 "
+              class="mx-2 font-semibold"
               style={{ color: "#FCAF45" }}
               href="https://instagram.com/neotenites"
               target="_blank"
@@ -41,7 +41,7 @@ const Layout = ({ children }) => {
               @neotenites
             </a>
             <a
-              class="mx-2 "
+              class="mx-2 font-semibold"
               style={{ color: "#FF0000" }}
               href="https://www.youtube.com/channel/UCFrYlpO11m2OK-kVmi34dBg"
               target="_blank"

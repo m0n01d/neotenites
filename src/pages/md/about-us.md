@@ -6,7 +6,6 @@ title: About Us
 Hi, we're the <b>`neotenites`</b>.
 
 <img class="my-8" src="../../images/about/us.jpeg" alt="this isn't our cat" width="320"/>
-<small class="block text-right">this isn't our cat</small>
 </br>
 
 He's Dwight. She's Caitlin. We're both web developers who work remotely. He works for a social media app, and she works for an online school.

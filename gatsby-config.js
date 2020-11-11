@@ -20,7 +20,7 @@ module.exports = {
         plugins: [
           {
             resolve: `gatsby-remark-images`,
-            options: {}
+            options: { showCaptions: true, withWebp: { quality: 80 } }
           }
         ]
       }
