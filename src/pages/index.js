@@ -38,7 +38,7 @@ const blogCard = ({ node }) => {
     fields: { slug }
   } = node
   return (
-    <div className="mb-3">
+    <div key={slug} className="mb-3">
       <Link
         to={slug}
         className="font-mono p-px hover:bg-black  inline-block group"
@@ -260,7 +260,7 @@ const MyMap = () => {
               iconSize: [18, 18]
             })}
             position={place.loc.slice().reverse()}
-            key={place.name}
+            key={`${place.name}${i}`}
           >
             <Popup>
               <p className="font-mono text-base ">{place.name}</p>
