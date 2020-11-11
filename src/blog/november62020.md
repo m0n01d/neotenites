@@ -13,6 +13,7 @@ And we have another guest joining us this weekend.
 ![peg a keg](../images/weekly/pegkeg.jpg)
 
 Toby’s eye has healed well. He had us worried for a few days. But he’s fine now.
+The boys are happy to be back at the Bird Sanctuary. They like to explore the field around the rv.
 
 
 The election happened. It was nice to be around friends during the first few tense hours.
