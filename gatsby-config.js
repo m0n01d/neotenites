@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `neotenites`,
-    description: `2 twentysomethings & 2 cats hitting the road.`,
+    description: `digital nomads and cats. Fulltime RVing the US.`,
     author: `@neotenites`
   },
   plugins: [
