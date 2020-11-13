@@ -73,13 +73,30 @@ const IndexPage = ({ data }) => {
       <SEO title="Home" />
       <div class="sm:flex h-full">
         <div class="sm:w-1/2">
-          <Section title="Pages">
-            {pages.map(post => {
-              return blogCard(post)
-            })}
+          <Section title="Weekly">
+            {blogPosts
+              .filter(
+                post =>
+                  post.node.frontmatter.tags &&
+                  post.node.frontmatter.tags.indexOf("weekly update") != -1
+              )
+              .map(post => {
+                return blogCard(post)
+              })}
           </Section>
           <Section title="Blog">
-            {blogPosts.map(post => {
+            {blogPosts
+              .filter(post => {
+                const { frontmatter } = post.node
+                if (!frontmatter.tags) return true
+                return frontmatter.tags.indexOf("weekly update") == -1
+              })
+              .map(post => {
+                return blogCard(post)
+              })}
+          </Section>
+          <Section title="Pages">
+            {pages.map(post => {
               return blogCard(post)
             })}
           </Section>
@@ -311,6 +328,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            tags
           }
           fields {
             slug
