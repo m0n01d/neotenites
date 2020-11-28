@@ -17,3 +17,11 @@
 .from-markdown.blog-post p {
   @apply .mb-2;
 }
+
+.gatsby-resp-image-figcaption {
+  @apply .text-right .text-sm .mr-3 .mt-2 .mb-3 .pr-px .font-mono;
+}
+
+.from-markdown.blog-post img {
+  @apply .border-r .border-b .border-purple-300 .pb-1 .pr-1;
+}
