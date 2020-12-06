@@ -212,18 +212,23 @@ const MyMap = () => {
   const hannaPark = {
     name: `Kathryn Abbey Hanna Park`,
     loc: ["30.3709252", "-81.4067718"],
-    dates: ["2020-11-15", "2020-211-20"].map(toDate)
+    dates: ["2020-11-15", "2020-11-20"].map(toDate)
   }
   const compassRV = {
     name: `Compass RV Resort`,
     loc: ["29.851061581059426", "-81.36176008937147"],
-    dates: ["2020-21-20", "2020-26-20"].map(toDate)
+    dates: ["2020-11-20", "2020-11-26"].map(toDate)
   }
   const lakeParkValdosta = {
     name: `Lake Park Campground`,
     loc: ["30.5326755", "-83.2347995"],
-    dates: ["2020-26-20", "2020-29-20"].map(toDate)
+    dates: ["2020-11-26", "2020-11-29"].map(toDate)
   }
+  const wekivaFallsAgain = {
+    name: "Wekiva Falls",
+    loc: [28.7948813, -81.425958],
+    dates: [new Date("2020-11-29")].map(toDate)
+  } // wekiva falls
   const coordinates = [
     oldHouse,
     wekivaFalls,
@@ -245,7 +250,8 @@ const MyMap = () => {
     suwanneeMusicPark2,
     hannaPark,
     compassRV,
-    lakeParkValdosta
+    lakeParkValdosta,
+    wekivaFallsAgain
   ]
   // todo move this data to api to query with graphql
   // consider keying by date
