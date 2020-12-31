@@ -11,7 +11,7 @@
 }
 
 .from-markdown ul {
-  @apply .bg-gray-200 .px-3 .py-2;
+  @apply .bg-gray-200 .px-3 .py-2 .list-inside .list-disc;
 }
 
 .from-markdown.blog-post p {
