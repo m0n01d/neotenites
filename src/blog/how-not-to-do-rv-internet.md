@@ -1,6 +1,8 @@
 ---
 date: 2020-06-09
 title: How not to do rv internet
+
+Tags : ["internet", "tech", "gear", "lifestyle"]
 ---
 
 Today is Tuesday June 16th, 2020.
@@ -93,4 +95,9 @@ If you have any questions, feel free to email me at <dwight@neotenites.com> or D
 
 I've decided to use the [Netgear Nighthawk](https://www.amazon.com/gp/product/B00R2AZLD2/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) router I already had. The ranger works ok, I just prefer the Nighthawk since it has 5ghz and 2ghz. If anyone wants a WifiRanger email me. Like new, free shipping. 
 
-Tags : internet, tech, gear, lifestyle,
+--- *Edit 03/04/2021* ---
+
+After several months with the Netgear Aircard i wanted to try out the [MOFI 4500](https://www.amazon.com/gp/product/B089NYWJYK/ref=ppx_yo_dt_b_asin_title_o09_s00?ie=UTF8&psc=1). I don't think it works quite as well as the Aircard. 
+
+I'll need to switch back to compare. 
+
