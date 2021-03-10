@@ -25,3 +25,7 @@
 .from-markdown.blog-post img {
   @apply .border-r .border-b .border-purple-300 .pb-1 .pr-1;
 }
+
+.from-markdown.blog-post {
+  @apply .px-4;
+}
