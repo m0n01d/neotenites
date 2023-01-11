@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "gatsby-plugin-react-leaflet": "^2.0.13",
-    "gatsby-transformer-remark": "^2.8.37",
+    "gatsby-transformer-remark": "^5.25.1",
     "prettier": "2.0.5",
     "tailwindcss": "^1.8.10"
   },
